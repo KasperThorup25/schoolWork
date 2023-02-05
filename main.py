@@ -8,24 +8,32 @@ def calculateNameScore(name):
     return round(totalScore / len(name))
 
 
+while (True):
+    userName = input("What's your name? ")
 
-userName = input("What's your name? ")
-
-if userName == "mark" or userName == "Mark":
-    print("This name is unable to be processed due to bad name")
-    exit("ID10T")
+    if "mark" in userName.lower():
+        print("This name is unable to be processed due to bad name")
+        exit("ID10T")
 
 
-# The name is converted to only lowercase to prevent different outcomes
-userNameScore = calculateNameScore(userName.lower())
+    # The name is converted to only lowercase to prevent different outcomes
+    userNameScore = calculateNameScore(userName.lower())
 
-if userNameScore < 105:
-    print("Your name sucks...")
-elif userNameScore < 106:
-    print("Your name is bad")
-elif userNameScore < 107:
-    print("Your name is okay")
-else:
-    print("Your name is awesome!!")
+    if userNameScore < 105:
+        print("Your name sucks...")
+    elif userNameScore < 106:
+        print("Your name is bad")
+    elif userNameScore < 107:
+        print("Your name is okay")
+    else:
+        print("Your name is awesome!!")
 
-print("Your name scare is: ", userNameScore)
+    print("Your name score is: ", userNameScore)
+
+    continueUserInput = input("Do you wanna try again (n/y)? ")
+    if continueUserInput.lower() == "n":
+        break
+
+
+
+
